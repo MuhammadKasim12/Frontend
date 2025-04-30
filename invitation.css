@@ -1,0 +1,74 @@
+body {
+  background-image: url('assets/invitation.png'); /* Ensure the correct path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Stronger contrast for readability */
+}
+
+.container {
+  background: transparent;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Headline Text - Golden with Glow */
+h1 {
+  color: blue; /* Gold color */
+  font-size: 28px;
+  text-shadow: 2px 2px 8px rgba(255, 223, 0, 1), /* Outer golden glow */
+               -2px -2px 3px rgba(255, 255, 255, 0.3); /* Emboss effect */
+}
+
+/* Location, Date, Time - Bright Gold for Contrast */
+.details {
+  font-weight: bold;
+  color: #FFCC00; /* Brighter Gold */
+  font-size: 20px;
+  text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.9), 
+               -1px -1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Regular Text - White with a Soft Glow */
+p {
+  font-size: 18px;
+  color: #FFF;
+  line-height: 1.6;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8), /* Darker shadow for contrast */
+               1px 1px 3px rgba(255, 255, 255, 0.4); /* Soft white glow */
+}
+
+/* Footer Text - Gold Glow for Elegance */
+.footer {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #FFD700;
+  text-shadow: 2px 2px 6px rgba(255, 215, 0, 1), 
+               -1px -1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
