@@ -1,0 +1,27 @@
+#!/bin/bash
+# vauggie - Voice wrapper for Auggie CLI
+# Usage: vauggie [-c|--continue] [workspace_path]
+
+SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "$0" 2>/dev/null || echo "$0")")" && pwd)"
+CONTINUE=""
+WORKSPACE="$(pwd)"
+
+# Parse args
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -c|--continue)
+            CONTINUE="--continue"
+            shift
+            ;;
+        *)
+            WORKSPACE="$1"
+            shift
+            ;;
+    esac
+done
+
+# Ensure dependencies (quiet)
+pip3 install openai-whisper sounddevice numpy -q 2>/dev/null &
+
+exec python3 "$SCRIPT_DIR/voice_chat.py" "$WORKSPACE" $CONTINUE
+
